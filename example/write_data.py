@@ -1,6 +1,6 @@
 from datetime import date
 
-from model.model import Person
+from model.model import Person, Pet
 from util.fomat_print import Printer
 
 
@@ -18,8 +18,13 @@ from util.fomat_print import Printer
 # p.save()
 
 
-# """
-# 直接用类的方法create插入数据
-# """
+# # """
+# # 直接用类的方法create插入数据
+# # """
 # grandma = Person.create(name="Grandma", birthday=date(1935, 3, 1))
 # herb = Person.create(name="Herb", birthday=date(1950, 5, 5))
+# uncle_bob = Person.create(name='Bob', birthday=date(1960, 1, 15))
+# bob_kitty = Pet.create(owner=uncle_bob, name='Kitty', animal_type='cat')
+# herb_fido = Pet.create(owner=herb, name='Fido', animal_type='dog')
+# herb_mittens = Pet.create(owner=herb, name='Mittens', animal_type='cat')
+# herb_mittens_jr = Pet.create(owner=herb, name='Mittens Jr', animal_type='cat')
