@@ -18,5 +18,15 @@ class Pet(BaseModel):
     name = CharField()
     animal_type = CharField()
 
+
+class User(BaseModel):
+    username = TextField()
+
+
+class Tweet(BaseModel):
+    content = TextField()
+    timestamp = DateTimeField(default=datetime.now)
+    user = ForeignKeyField(User, lazy_load=True)
+
 class Event(BaseModel):
     event_date = DateField()

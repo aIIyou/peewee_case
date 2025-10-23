@@ -1,6 +1,6 @@
 from datetime import date
 
-from model.model import Person, Pet
+from model.model import Person, Pet, User, Tweet
 from util.fomat_print import Printer
 
 
@@ -28,3 +28,5 @@ from util.fomat_print import Printer
 # herb_fido = Pet.create(owner=herb, name='Fido', animal_type='dog')
 # herb_mittens = Pet.create(owner=herb, name='Mittens', animal_type='cat')
 # herb_mittens_jr = Pet.create(owner=herb, name='Mittens Jr', animal_type='cat')
+# user_jayce = User.create(username="jayce")
+# tweet = Tweet.create(content="123", user=user_jayce)
