@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from peewee import *
 from db.db import db
 
@@ -17,3 +19,13 @@ class Pet(BaseModel):
     owner = ForeignKeyField(model=Person, field=Person.id, backref="pets")
     name = CharField()
     animal_type = CharField()
+
+
+class User(BaseModel):
+    username = TextField()
+
+
+class Tweet(BaseModel):
+    content = TextField()
+    timestamp = DateTimeField(default=datetime.now)
+    user = ForeignKeyField(User, lazy_load=True)

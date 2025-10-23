@@ -1,6 +1,6 @@
 from peewee import fn, JOIN
 
-from model.model import Person, Pet
+from model.model import Person, Pet, Tweet, User
 
 # """
 # 直接使用Model类型的get方法
@@ -40,6 +40,21 @@ from model.model import Person, Pet
 # except Exception as e:
 #     print(e)
 
+# try:
+#     tweets = Tweet.select()
+#     for tweet in tweets:
+#         print(
+#             tweet.user_id
+#         )  # Tweet此时的外键懒加载禁用了，所以这里查出来的user字段是外键字段的值
+# except Exception as e:
+#     print(e)
+
+try:
+    users = User.select()
+    for user in users:
+        print(user.tweet_set)
+except Exception as e:
+    print(e)
 
 # """
 # 主表查询出来以后,直接可以统计从表(这的表述存在错误性,并不是直接统计,而是在调用person.pets.count()的时候会再次向mysqld发送sql进行查询
@@ -81,3 +96,11 @@ from model.model import Person, Pet
 #     print(person.name)
 #     for pet in person.pets:
 #         print("*",pet.name)
+
+# """
+# 自定义主键model的get_by_id()方法
+# """
+# try:
+#     CustomPrimaryKey.get_by_id("jayce")
+# except Exception as e:
+#     print(e)
