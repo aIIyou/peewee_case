@@ -1,5 +1,4 @@
 from db.db import db
-from model.model import Person, Pet
+from model.model import User, Tweet
 
-
-db.create_tables(models=[Person, Pet])
+db.create_tables(models=[User, Tweet])
