@@ -10,8 +10,8 @@ logger.setLevel(logging.DEBUG)
 db = MySQLDatabase(
     "peewee_case",
     **{
-        "host": "127.0.0.1",
-        "port": 3306,
+        "host": "9.134.245.207",
+        "port": 33060,
         "user": "root",
         "password": "Nwpuyaoxin94.",
         "charset": "utf8mb4",

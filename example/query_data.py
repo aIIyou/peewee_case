@@ -1,6 +1,7 @@
 from peewee import fn, JOIN
 
 from model.model import Person, Pet, Tweet, User
+from datetime import datetime
 
 # """
 # 直接使用Model类型的get方法
@@ -16,10 +17,10 @@ from model.model import Person, Pet, Tweet, User
 # 使用Person().select().where().get()
 # """
 #
-# try:
-#     grandma = Person.select().where(Person.name == 'Grandma L1').get()
-# except Exception as e:
-#     print(e)
+try:
+    grandma = Person.select().where(Person.name == "Grandma L1").get()
+except Exception as e:
+    print(e)
 
 
 # """
@@ -49,12 +50,12 @@ from model.model import Person, Pet, Tweet, User
 # except Exception as e:
 #     print(e)
 
-try:
-    users = User.select()
-    for user in users:
-        print(user.tweet_set)
-except Exception as e:
-    print(e)
+# try:
+#     users = User.select()
+#     for user in users:
+#         print(user.tweet_set)
+# except Exception as e:
+#     print(e)
 
 # """
 # 主表查询出来以后,直接可以统计从表(这的表述存在错误性,并不是直接统计,而是在调用person.pets.count()的时候会再次向mysqld发送sql进行查询
@@ -104,3 +105,5 @@ except Exception as e:
 #     CustomPrimaryKey.get_by_id("jayce")
 # except Exception as e:
 #     print(e)
+
+# User.get()

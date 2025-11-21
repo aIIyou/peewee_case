@@ -1,5 +1,7 @@
 from peewee import *
 from db.db import db
+from datetime import datetime
+from model.dynamic_tablename import make_table_name
 
 
 class BaseModel(Model):
@@ -28,5 +30,9 @@ class Tweet(BaseModel):
     timestamp = DateTimeField(default=datetime.now)
     user = ForeignKeyField(User, lazy_load=True)
 
+
 class Event(BaseModel):
     event_date = DateField()
+
+    class Meta:
+        table_function = make_table_name
